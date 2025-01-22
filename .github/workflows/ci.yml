@@ -23,7 +23,8 @@ jobs:
       - name: Set up environment
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker.io python3-pip
+          sudo apt-get remove -y containerd
+          sudo apt-get install -y docker.io containerd.io python3-pip
           sudo systemctl start docker
           python3 -m pip install --upgrade pip
 
